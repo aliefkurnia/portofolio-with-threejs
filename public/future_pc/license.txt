@@ -1,0 +1,11 @@
+Model Information:
+* title:	Future PC
+* source:	https://sketchfab.com/3d-models/future-pc-4e15bb407bd24e4ab2be1d132c31d6a9
+* author:	BYVIKTOR (https://sketchfab.com/BYVIKTOR)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Future PC" (https://sketchfab.com/3d-models/future-pc-4e15bb407bd24e4ab2be1d132c31d6a9) by BYVIKTOR (https://sketchfab.com/BYVIKTOR) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

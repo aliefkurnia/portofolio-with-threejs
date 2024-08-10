@@ -1,0 +1,8 @@
+Model Information:
+* title:	ARCTIC HAZMAT RUST
+* source:	https://sketchfab.com/3d-models/arctic-hazmat-rust-4acbf4aa14e24a3cb7e5131e91f6ab66
+* author:	sludud (https://sketchfab.com/sludud)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
