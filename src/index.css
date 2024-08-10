@@ -242,3 +242,57 @@
 .experience-card:hover {
   transform: rotateX(10deg) rotateY(10deg) translateZ(10px); /* Tilt effect */
 }
+@keyframes popupFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popupFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes widgetSlideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  90% {
+    transform: translateX(120%);
+  }
+  97% {
+    transform: translateX(-10%);
+  }
+  99% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.popup-show {
+  animation: popupFadeIn 0.7s ease-out forwards;
+}
+
+.popup-hide {
+  animation: popupFadeOut 0.5s ease-out forwards;
+}
+
+.widget-slide-in {
+  animation: widgetSlideIn 5s ease-in-out forwards;
+}

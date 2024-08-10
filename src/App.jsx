@@ -9,6 +9,7 @@ import {
   Tech,
   Works,
   StarsCanvas,
+  Widget,
 } from "./components";
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
         <div className="relative z-0">
           <Contact />
         </div>
+        <Widget />
       </div>
     </BrowserRouter>
   );

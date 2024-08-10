@@ -24,7 +24,7 @@ const Computers = ({ isMobile, scrollY }) => {
 
   // Calculate the new position based on scroll
   const adjustedPosition = [
-    isMobile ? -4 : -4 - scrollY * -0.02 + position[1],
+    isMobile ? -4 : -1 - scrollY * -0.02 + position[1],
     isMobile ? 0 : -0.5, // Include oscillation in Y position
     isMobile ? 0 : -3 + scrollY * -0.004, // Adjust the Z position slightly based on scroll
   ];
@@ -51,7 +51,7 @@ const Computers = ({ isMobile, scrollY }) => {
           object={computer.scene}
           scale={isMobile ? 0.1 : 0.2}
           position={[6, 0, 0]} // Ensure this is zeroed out so group position controls it
-          rotation={[0, -0.4, 0]}
+          rotation={[-0.3, -0.7, 0]}
         />
       </mesh>
     </group>

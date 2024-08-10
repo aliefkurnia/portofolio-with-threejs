@@ -18,6 +18,9 @@ import kubernetes from "./tech/kubernetes.png";
 import sqlserver from "./tech/sqlserver.png";
 import vb from "./tech/vb.png";
 import csharp from "./tech/csharp.png";
+import astrowidget from "./astrowidget.webp";
+import instagram from "./instagram.png";
+import linkedin from "./linkedin.png";
 
 import bifarma from "./company/bifarma.png";
 import digitalent from "./company/digitalent.png";
@@ -55,4 +58,7 @@ export {
   hargaemas,
   carisurah,
   cariin,
+  astrowidget,
+  instagram,
+  linkedin,
 };
