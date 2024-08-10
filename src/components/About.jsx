@@ -18,17 +18,12 @@ const ServiceCard = ({ index, title, icon }) => (
   >
     <motion.div
       variants={slideIn("right", "spring", index * 0.5, 0.75)}
-      className="w-full p-[1px] rounded-[20px] shadow-card"
-      style={{
-        background:
-          "linear-gradient(145deg, rgba(255,255,255,0.1), rgba(0,0,0,0.1))",
-        boxShadow:
-          "10px 10px 30px rgba(0, 0, 0, 0.3), -10px -10px 30px rgba(255, 255, 255, 0.1)",
-      }}
+      className="p-[2px] rounded-[20px] relative overflow-hidden "
     >
       <div
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
+        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col relative z-20"
         style={{
+          background: "rgba(1, 32, 78, 0.85)", // Mengubah background menjadi sedikit transparan
           transform: "perspective(1000px)",
           transformStyle: "preserve-3d",
         }}
@@ -38,15 +33,15 @@ const ServiceCard = ({ index, title, icon }) => (
           alt="web-development"
           className="w-16 h-16 object-contain"
           style={{
-            transform: "translateZ(40px)", // Increase translateZ for a stronger floating effect
-            boxShadow: "0px 20px 30px rgba(0, 0, 0, 0.5)", // Add shadow to enhance the floating effect
+            transform: "translateZ(40px)",
+            boxShadow: "0px 20px 30px rgba(0, 0, 0, 0.5)",
           }}
         />
         <h3
           className="text-white text-[20px] font-bold text-center"
           style={{
-            transform: "translateZ(30px)", // Increase translateZ for a stronger floating effect
-            textShadow: "0px 10px 15px rgba(0, 0, 0, 0.4)", // Add shadow to enhance the floating effect
+            transform: "translateZ(30px)",
+            textShadow: "0px 10px 15px rgba(0, 0, 0, 0.4)",
           }}
         >
           {title}

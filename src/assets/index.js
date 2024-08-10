@@ -24,9 +24,9 @@ import digitalent from "./company/digitalent.png";
 import codeid from "./company/codeid.png";
 import realta from "./company/realta.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import hargaemas from "./hargaemas.png";
+import carisurah from "./carisurah.png";
+import cariin from "./cariin.png";
 
 export {
   github,
@@ -41,9 +41,6 @@ export {
   reactjs,
   tailwind,
   threejs,
-  carrent,
-  jobit,
-  tripguide,
   dotnet,
   adobeilustrator,
   realta,
@@ -55,4 +52,7 @@ export {
   digitalent,
   codeid,
   csharp,
+  hargaemas,
+  carisurah,
+  cariin,
 };

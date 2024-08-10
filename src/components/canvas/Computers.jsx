@@ -1,20 +1,41 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import {
+  OrbitControls,
+  Preload,
+  useGLTF,
+  PresentationControls,
+} from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile, scrollY }) => {
   const computer = useGLTF("./future_pc/scene.gltf");
 
+  // State to manage oscillation and rotation
+  const [hover, setHover] = useState(false);
+  const [rotation, setRotation] = useState([0, 0, 0]);
+  const [position, setPosition] = useState([0, 0, 0]);
+
+  // Use useFrame to create an oscillating effect for floating
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
+    setPosition([0, Math.sin(time) * 0.4, 3]); // Slight oscillation in the Y axis for floating
+  });
+
   // Calculate the new position based on scroll
   const adjustedPosition = [
-    isMobile ? -4 : -4,
-    isMobile ? 0 : -0.5 + scrollY * 0.002, // Adjust the Y position slightly based on scroll
-    isMobile ? 0 : -3 + scrollY * 0.004, // Adjust the Z position slightly based on scroll
+    isMobile ? -4 : -4 - scrollY * -0.02 + position[1],
+    isMobile ? 0 : -0.5, // Include oscillation in Y position
+    isMobile ? 0 : -3 + scrollY * -0.004, // Adjust the Z position slightly based on scroll
   ];
 
   return (
-    <group position={adjustedPosition} rotation={[0, -0.1, 0]}>
+    <group
+      position={adjustedPosition}
+      rotation={rotation} // Apply the oscillation rotation
+      onPointerOver={() => setHover(true)}
+      onPointerOut={() => setHover(false)}
+    >
       <mesh>
         <hemisphereLight intensity={0.3} groundColor="black" />
         <spotLight
@@ -29,8 +50,8 @@ const Computers = ({ isMobile, scrollY }) => {
         <primitive
           object={computer.scene}
           scale={isMobile ? 0.1 : 0.2}
-          position={[0, 0, 0]} // Position is now controlled by group
-          rotation={[0, 1, 0]}
+          position={[6, 0, 0]} // Ensure this is zeroed out so group position controls it
+          rotation={[0, -0.4, 0]}
         />
       </mesh>
     </group>
@@ -39,7 +60,7 @@ const Computers = ({ isMobile, scrollY }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [scrollY, setScrollY] = useState(0); // State to track scroll position
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 200px)");
@@ -51,14 +72,12 @@ const ComputersCanvas = () => {
 
     mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-    // Listen to scroll event
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up event listeners on unmount
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
       window.removeEventListener("scroll", handleScroll);
@@ -76,10 +95,19 @@ const ComputersCanvas = () => {
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+          enablePan={false}
+          enableRotate={false}
         />
-        <Computers isMobile={isMobile} scrollY={scrollY} />
+        <PresentationControls
+          global
+          config={{ mass: 2, tension: 500 }}
+          snap={{ mass: 4, tension: 1500 }} // Controls snapping back to the initial position
+          rotation={[-0.8, 2, 0.7]} // Initial rotation
+          polar={[-Math.PI / 3, Math.PI / 3]} // Controls vertical rotation limits
+          azimuth={[-Math.PI / 1.4, Math.PI / 2]} // Controls horizontal rotation limits
+        >
+          <Computers isMobile={isMobile} scrollY={scrollY} />
+        </PresentationControls>
       </Suspense>
 
       <Preload all />

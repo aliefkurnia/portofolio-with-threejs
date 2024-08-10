@@ -33,16 +33,6 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.violet-gradient {
-  background: #804dee;
-  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
-  background: -webkit-linear-gradient(
-    -90deg,
-    #804dee 0%,
-    rgba(60, 51, 80, 0) 100%
-  );
-}
-
 .green-pink-gradient {
   background: "#00cea8";
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
@@ -241,4 +231,14 @@
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
+}
+
+.experience-card {
+  perspective: 1000px; /* Define the perspective */
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease-in-out;
+}
+
+.experience-card:hover {
+  transform: rotateX(10deg) rotateY(10deg) translateZ(10px); /* Tilt effect */
 }

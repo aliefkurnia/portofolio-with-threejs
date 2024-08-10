@@ -16,8 +16,9 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
+        background: "rgba(1, 32, 78, 0.85)",
         color: "#fff",
+        transition: "transform 0.3s ease",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
@@ -31,6 +32,7 @@ const ExperienceCard = ({ experience }) => {
           />
         </div>
       }
+      className="experience-card" // Add custom class for styling
     >
       <div>
         <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>

@@ -8,9 +8,6 @@ import {
   nodejs,
   git,
   docker,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
   adobeilustrator,
   csharp,
@@ -21,6 +18,9 @@ import {
   digitalent,
   codeid,
   realta,
+  hargaemas,
+  carisurah,
+  cariin,
 } from "../assets";
 
 export const navLinks = [
@@ -160,97 +160,70 @@ const experiences = [
   },
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
-
 const projects = [
   {
-    name: "Car Rent",
+    name: "Kalkulator Harga Emas",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "provides real-time updates on the latest gold prices, reflecting changes in both USD and IDR. Additionally, it features a calculator to easily determine the price of gold per gram, offering a convenient tool for anyone interested in staying informed about gold market trends.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "expressjs",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "mui",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: hargaemas,
+    source_code_link: "https://harga-emas.vercel.app/",
   },
   {
-    name: "Job IT",
+    name: "Cari Surah",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "This Website have a feature to search for specific Surahs in the Quran, along with a play feature that allows users to listen to the recitation of each Surah. This tool is designed to make it easier for users to explore and engage with the Quranic text.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
+      },
+      {
+        name: "axios",
+        color: "green-text-gradient",
       },
       {
         name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: carisurah,
+    source_code_link: "https://cari-surah.vercel.app/",
   },
   {
-    name: "Trip Guide",
+    name: "Cariin",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A web application for searching movies, providing detailed descriptions and ratings for each title.",
     tags: [
       {
-        name: "nextjs",
+        name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "axios",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "restapi",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: cariin,
+    source_code_link: "https://cariin-film.vercel.app/",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };

@@ -9,7 +9,7 @@ const Hero = () => {
       >
         <div className="bg-transparent">
           <h1 className={`${styles.heroHeadText} text-white typing-loop`}>
-            Hello, I'm <span className="text-[#535C91]">Alip</span>
+            Hello, I'm <span className="text-[#FEAE6F]">Alip</span>
           </h1>
           <p
             className={`${styles.heroSubText} mt-2 text-white-100 bg-transparent `}
