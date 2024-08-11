@@ -9,38 +9,28 @@ import { fadeIn, slideIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt
-    className="xs:w-[250px] w-full"
-    options={{
-      max: 25,
-      scale: 1.05,
-      speed: 400,
-    }}
+    className="xs:w-[200px] w-full parallax-effect-glare-scale"
+    perspective={300}
+    glareEnable={true}
+    glareMaxOpacity={0.45}
+    scale={1.02}
+    gyroscope={true}
   >
     <motion.div
       variants={slideIn("right", "spring", index * 0.5, 0.75)}
-      className="p-[2px] rounded-[20px] relative overflow-hidden "
+      className="p-[2px] rounded-[20px] relative overflow-hidden"
+      style={{ transformStyle: "preserve-3d" }} // Enable 3D transform on the container
     >
       <div
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col relative z-20"
+        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col inner-elemen "
         style={{
-          background: "rgba(1, 32, 78, 0.85)", // Mengubah background menjadi sedikit transparan
-          transform: "perspective(1000px)",
-          transformStyle: "preserve-3d",
+          background: "rgba(1, 32, 78, 0.85)",
         }}
       >
-        <img
-          src={icon}
-          alt="web-development"
-          className="w-16 h-16 object-contain"
-          style={{
-            transform: "translateZ(40px)",
-            boxShadow: "0px 20px 30px rgba(0, 0, 0, 0.5)",
-          }}
-        />
+        <img src={icon} alt={title} className="w-16 h-16 object-contain" />
         <h3
           className="text-white text-[20px] font-bold text-center"
           style={{
-            transform: "translateZ(30px)",
             textShadow: "0px 10px 15px rgba(0, 0, 0, 0.4)",
           }}
         >

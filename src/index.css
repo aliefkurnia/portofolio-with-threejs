@@ -296,3 +296,26 @@
 .widget-slide-in {
   animation: widgetSlideIn 5s ease-in-out forwards;
 }
+
+.parallax-effect-glare-scale {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 270;
+  border-radius: 20px;
+  color: white;
+  transform-style: preserve-3d;
+}
+
+.parallax-effect-glare-scale .inner-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-style: italic;
+  color: white;
+  transform: translateZ(60px);
+}
