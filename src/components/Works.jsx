@@ -25,6 +25,7 @@ const ProjectCard = ({
           speed: 450,
         }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        style={{ backgroundColor: "rgba(1, 32, 78, 0.85)" }} // Update the background color here
       >
         <div className="relative w-full h-[230px]">
           <img

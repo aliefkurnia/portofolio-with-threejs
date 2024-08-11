@@ -79,6 +79,7 @@ const Contact = () => {
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        style={{ backgroundColor: "rgba(1, 32, 78, 0.85)" }} // Update the background color here
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
@@ -95,7 +96,7 @@ const Contact = () => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder="What's your name?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
@@ -106,7 +107,7 @@ const Contact = () => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="What's your email?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
@@ -118,16 +119,29 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder="What you want to say?"
+              maxLength={200}
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              style={{ resize: "none" }} // Perbaikan: Tanda kutip yang benar pada nilai resize
             />
           </label>
 
-          <button
-            type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
+          <div className="flex gap-4">
+            <button
+              type="submit"
+              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+            >
+              {loading ? "Sending..." : "Send"}
+            </button>
+
+            <a
+              href="/path/to/your-cv.pdf" // Ganti dengan path PDF CV
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-secondary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+            >
+              View CV
+            </a>
+          </div>
 
           {successMessage && (
             <p className="text-green-500 mt-4">{successMessage}</p>
