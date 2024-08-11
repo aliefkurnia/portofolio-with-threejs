@@ -24,8 +24,13 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full parallax-effect-glare-scale"
         style={{ backgroundColor: "rgba(1, 32, 78, 0.85)" }} // Update the background color here
+        perspective={400}
+        glareEnable={true}
+        glareMaxOpacity={0.45}
+        scale={1.02}
+        gyroscope={true}
       >
         <div className="relative w-full h-[230px]">
           <img

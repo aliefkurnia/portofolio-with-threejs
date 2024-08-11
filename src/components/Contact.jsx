@@ -7,6 +7,7 @@ import { ArcticHazmatRustCanvas } from "./canvas";
 
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import cv from "../assets/Muchammad Alief Kurnia Wijaya-resume.pdf";
 
 const Contact = () => {
   const formRef = useRef();
@@ -79,7 +80,7 @@ const Contact = () => {
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
-        style={{ backgroundColor: "rgba(1, 32, 78, 0.85)" }} // Update the background color here
+        style={{ backgroundColor: "rgba(1, 32, 78, 0.85)" }}
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
@@ -98,6 +99,7 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="What's your name?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              required
             />
           </label>
           <label className="flex flex-col">
@@ -109,6 +111,7 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="What's your email?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              required
             />
           </label>
           <label className="flex flex-col">
@@ -121,23 +124,25 @@ const Contact = () => {
               placeholder="What you want to say?"
               maxLength={200}
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-              style={{ resize: "none" }} // Perbaikan: Tanda kutip yang benar pada nilai resize
+              style={{ resize: "none" }}
+              required
             />
           </label>
 
           <div className="flex gap-4">
             <button
               type="submit"
-              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary transition-transform duration-300 transform hover:scale-105"
             >
               {loading ? "Sending..." : "Send"}
             </button>
 
             <a
-              href="/path/to/your-cv.pdf" // Ganti dengan path PDF CV
+              href={cv}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-secondary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+              className="bg-secondary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary transition-transform duration-300 transform hover:scale-105"
+              style={{ color: "rgba(1, 32, 78, 0.85)" }}
             >
               View CV
             </a>

@@ -10,7 +10,7 @@ import { fadeIn, slideIn, textVariant } from "../utils/motion";
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt
     className="xs:w-[200px] w-full parallax-effect-glare-scale"
-    perspective={300}
+    perspective={400}
     glareEnable={true}
     glareMaxOpacity={0.45}
     scale={1.02}
