@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./index"; // Import the CSS file
-
+import { instagram, astrowidget, linkedin } from "../assets";
 const Widget = () => {
   const [scrollY, setScrollY] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
@@ -66,7 +66,7 @@ const Widget = () => {
           onMouseLeave={handleMouseLeave}
         >
           <img
-            src="src/assets/astrowidget.webp"
+            src={astrowidget}
             alt="Widget Icon"
             style={{
               width: "100%",
@@ -93,7 +93,7 @@ const Widget = () => {
               className="mb-2"
             >
               <img
-                src="src/assets/instagram.png"
+                src={instagram}
                 alt="Instagram"
                 style={{
                   width: "60px",
@@ -108,7 +108,7 @@ const Widget = () => {
               rel="noopener noreferrer"
             >
               <img
-                src="src/assets/linkedin.png"
+                src={linkedin}
                 alt="LinkedIn"
                 style={{
                   width: "60px",
