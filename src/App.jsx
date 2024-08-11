@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 import {
@@ -13,6 +14,24 @@ import {
 } from "./components";
 
 const App = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Fungsi untuk mengecek ukuran layar
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Ukuran mobile dianggap jika <= 768px
+    };
+
+    // Jalankan fungsi saat komponen pertama kali dirender
+    handleResize();
+
+    // Tambahkan event listener untuk menangani resize
+    window.addEventListener("resize", handleResize);
+
+    // Bersihkan event listener saat komponen dilepas
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
@@ -21,8 +40,12 @@ const App = () => {
           <Hero />
           <StarsCanvas />
         </div>
-        <About />
-        <Experience />
+        <div className={isMobile ? "about-card" : ""}>
+          <About />
+        </div>
+        <div>
+          <Experience />
+        </div>
         <div className="relative z-0">
           <Tech />
         </div>

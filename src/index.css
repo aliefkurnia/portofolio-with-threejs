@@ -236,7 +236,7 @@
 .experience-card {
   perspective: 1000px; /* Define the perspective */
   transform-style: preserve-3d;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .experience-card:hover {
@@ -318,4 +318,7 @@
   font-style: italic;
   color: white;
   transform: translateZ(60px);
+}
+.about-card {
+  margin-bottom: 500px;
 }

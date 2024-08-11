@@ -43,7 +43,7 @@ const ServiceCard = ({ index, title, icon }) => (
 
 const About = () => {
   return (
-    <section className="relative w-full h-screen mx-auto text-center">
+    <section className="relative w-full h-screen mx-auto text-center ">
       <motion.div variants={textVariant()} className="mx-auto">
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
