@@ -97,7 +97,7 @@ function Tech() {
       </motion.div>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl mx-auto leading-[30px]"
+        className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-center"
       >
         These are the technologies I've used throughout my journey in web
         development and various projects.

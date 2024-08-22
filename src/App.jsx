@@ -53,7 +53,7 @@ const App = () => {
         <div className="relative z-0">
           <Contact />
         </div>
-        <Widget />
+        <Widget className="w-full md:w-1/2 lg:w-1/4 h-auto md:h-48 lg:h-64" />
       </div>
     </BrowserRouter>
   );
