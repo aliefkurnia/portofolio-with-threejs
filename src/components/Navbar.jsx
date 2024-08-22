@@ -25,13 +25,17 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navbarStyle = {
+    backgroundColor: scrolled ? "rgba(255, 255, 255, 0.1)" : "transparent",
+    backdropFilter: scrolled ? "blur(10px)" : "none",
+    WebkitBackdropFilter: scrolled ? "blur(10px)" : "none",
+    transition: "background-color 0.3s ease, backdrop-filter 0.3s ease",
+  };
+
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
-      }`}
+      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20`}
+      style={navbarStyle}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
@@ -42,7 +46,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <p className="text-white text-[18px] font-bold cursor-pointer flex ">
+          <p className="text-white text-[18px] font-bold cursor-pointer flex">
             Alief Kurnia &nbsp;
           </p>
         </Link>

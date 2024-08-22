@@ -55,12 +55,7 @@ const Widget = () => {
     <>
       {widgetVisible && !showPopup && (
         <div
-          className="fixed bottom-2 right-2 z-50 cursor-pointer widget-slide-in"
-          style={{
-            width: "150px",
-            height: "150px",
-            overflow: "hidden",
-          }}
+          className="fixed bottom-2 right-2 z-50 cursor-pointer widget-slide-in w-24 h-24 md:w-36 md:h-36 lg:w-40 lg:h-40 overflow-hidden"
           onClick={togglePopup}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -68,11 +63,7 @@ const Widget = () => {
           <img
             src={astrowidget}
             alt="Widget Icon"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
+            className="w-full h-full object-cover"
           />
         </div>
       )}
