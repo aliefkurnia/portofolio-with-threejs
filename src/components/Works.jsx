@@ -26,7 +26,6 @@ const ProjectCard = ({
         }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full parallax-effect-glare-scale"
         style={{ backgroundColor: "rgba(1, 32, 78, 0.85)" }} // Update the background color here
-        perspective={400}
         glareEnable={true}
         glareMaxOpacity={0.45}
         scale={1.02}
@@ -36,14 +35,21 @@ const ProjectCard = ({
           <img
             src={image}
             alt="project_image"
-            className="w-full h-full object-cover rounded-2xl"
+            className="clickable-image"
+            onClick={() => window.open(source_code_link, "_blank")}
           />
+          <style jsx>{`
+            .clickable-image {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 1rem; /* rounded-2xl setara dengan 1rem */
+              cursor: pointer;
+            }
+          `}</style>
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
+            <div className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer">
               <img
                 src={github}
                 alt="source code"
