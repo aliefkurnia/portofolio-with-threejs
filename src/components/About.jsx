@@ -74,18 +74,21 @@ const About = () => {
           Overview.
         </h2>
       </motion.div>
-      <motion.p
-        ref={textRef}
-        className="mt-4 text-secondary text-base sm:text-2xl sm:leading-8 max-w-7xl mx-auto leading-6"
-      >
-        I'm committed to developing efficient, scalable, and user-friendly web
-        solutions. With nearly two years of experience in web development using
-        .NET Core and a strong background in JavaScript frameworks like React.js
-        and Express.js, I’m passionate about tackling complex challenges.
-        Currently, I'm also delving into Three.js to enhance my skill set. I’m
-        eager to collaborate on innovative projects and turn creative concepts
-        into impactful, real-world applications.
-      </motion.p>
+      <div className="w-full flex justify-center mt-10">
+        <motion.p
+          ref={textRef}
+          className="mt-4 text-secondary text-base sm:text-2xl sm:leading-8 max-w-7xl mx-auto leading-6"
+        >
+          I'm committed to developing efficient, scalable, and user-friendly web
+          solutions. With nearly two years of experience in web development
+          using .NET Core and a strong background in JavaScript frameworks like
+          React.js and Express.js, I’m passionate about tackling complex
+          challenges. Currently, I'm also delving into Three.js to enhance my
+          skill set. I’m eager to collaborate on innovative projects and turn
+          creative concepts into impactful, real-world applications.
+        </motion.p>
+      </div>
+
       <div className="mt-10 flex flex-wrap gap-5 justify-center mx-auto">
         {services.map((service, index) => (
           <ServiceCard index={index} key={service.title} {...service} />

@@ -240,8 +240,8 @@ body {
   resize: none; /* Hilangkan fitur resize */
 }
 .footer-logo {
-  width: 50px; /* Atur ukuran logo sesuai kebutuhan */
-  height: 50px;
+  width: 35px; /* Atur ukuran logo sesuai kebutuhan */
+  height: 35px;
   object-fit: contain; /* Menjaga rasio gambar */
 }
 
@@ -252,4 +252,16 @@ body {
 
 .footer-link img {
   margin-right: 15px; /* Jarak antara logo dan teks link */
+}
+@media (max-width: 768px) {
+  footer {
+    padding: 101px 0; /* Kurangi padding vertikal */
+  }
+  .footer-link {
+    margin: 0 5px; /* Kurangi margin di sekitar ikon */
+  }
+  .footer-logo {
+    width: 20px; /* Sesuaikan ukuran ikon agar lebih kecil di mobile */
+    height: 20px;
+  }
 }

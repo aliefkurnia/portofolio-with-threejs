@@ -134,8 +134,12 @@ const Works = () => {
   return (
     <section className="text-center items-center">
       <motion.div variants={textVariant()} className="text-center mt-20">
-        <p className={`${styles.sectionSubText}`}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <p className={`${styles.sectionSubText} text-base md:text-xl`}>
+          My work
+        </p>
+        <h2 className={`${styles.sectionHeadText} text-4xl md:text-6xl`}>
+          Projects.
+        </h2>
       </motion.div>
 
       <div className="w-full flex justify-center mt-10">
