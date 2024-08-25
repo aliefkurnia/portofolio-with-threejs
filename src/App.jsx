@@ -44,13 +44,11 @@ const App = () => {
           <About />
         </div>
         <Experience />
-        <div className="relative z-0">
+        <div>
           <Tech />
         </div>
         <Works />
-        <div className="relative z-0">
-          <Contact />
-        </div>
+        <Contact />
         <Widget />
       </div>
     </BrowserRouter>

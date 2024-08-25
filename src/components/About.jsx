@@ -11,17 +11,17 @@ import { fadeIn } from "../utils/motion";
 gsap.registerPlugin(ScrollTrigger);
 
 const ServiceCard = ({ index, title, icon }) => (
-  <div className="xs:w-[200px] w-full parallax-effect-glare-scale">
+  <div className="xs:w-[400px] w-full parallax-effect-glare-scale">
     <motion.div
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.3 }}
       viewport={{ once: true, amount: 0.5 }}
-      className="p-[2px] rounded-[20px] relative overflow-hidden"
+      className="p-[2px] rounded-[20px] relative "
       style={{ transformStyle: "preserve-3d" }}
     >
       <div
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col inner-elemen"
+        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[180px] flex justify-evenly items-center "
         style={{ background: "rgba(0, 0, 0, 0.75)" }}
       >
         <img src={icon} alt={title} className="w-16 h-16 object-contain" />
@@ -66,15 +66,17 @@ const About = () => {
 
   return (
     <section className="relative w-full h-screen mx-auto text-center pb-20">
-      {" "}
-      {/* Added padding-bottom */}
       <motion.div variants={fadeIn("", "", 0.1, 1)} className="mx-auto">
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <p className={`${styles.sectionSubText} text-1xl md:text-2xl`}>
+          Introduction
+        </p>
+        <h2 className={`${styles.sectionHeadText} text-6xl md:text-8xl`}>
+          Overview.
+        </h2>
       </motion.div>
       <motion.p
         ref={textRef}
-        className="mt-4 text-secondary text-[17px] max-w-3xl mx-auto leading-[30px]"
+        className="mt-4 text-secondary text-[25px] max-w-7xl mx-auto leading-[41px]"
       >
         I'm committed to developing efficient, scalable, and user-friendly web
         solutions. With nearly two years of experience in web development using
@@ -84,7 +86,7 @@ const About = () => {
         eager to collaborate on innovative projects and turn creative concepts
         into impactful, real-world applications.
       </motion.p>
-      <div className="mt-10 flex flex-wrap gap-10 justify-center mx-auto">
+      <div className="mt-10 flex flex-wrap gap-5 justify-center mx-auto">
         {services.map((service, index) => (
           <ServiceCard index={index} key={service.title} {...service} />
         ))}

@@ -20,18 +20,18 @@ const ProjectCard = ({
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <div
-        className="bg-tertiary p-5 rounded-2xl w-full flex items-center gap-6"
+        className="bg-tertiary p-5 rounded-2xl w-full flex flex-col lg:flex-row items-center gap-6"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
       >
         <div
-          className="relative w-1/3"
+          className="relative w-full lg:w-1/3"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           <img
             src={image}
             alt="project_image"
-            className={`w-full h-auto object-cover rounded-xl  transition-all duration-300 ${
+            className={`w-full h-auto object-cover rounded-xl transition-all duration-300 ${
               isHovered ? "brightness-75" : ""
             }`}
           />
@@ -47,7 +47,7 @@ const ProjectCard = ({
           )}
         </div>
 
-        <div className="w-2/3">
+        <div className="w-full lg:w-2/3 mt-4 lg:mt-0">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
 
@@ -78,13 +78,13 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <>
-      <motion.div variants={textVariant()} className="text-center">
+    <section style={{ marginBottom: "6rem" }}>
+      <motion.div variants={textVariant()} className="text-center mt-20">
         <p className={`${styles.sectionSubText}`}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
       </motion.div>
 
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center mt-10">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-center"
@@ -102,7 +102,7 @@ const Works = () => {
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
-    </>
+    </section>
   );
 };
 

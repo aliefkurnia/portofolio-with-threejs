@@ -81,7 +81,7 @@ function Tech() {
     <section
       style={{
         height: "85vh", // Increase the height of the Tech section
-        padding: "6rem 0", // Add padding to the top and bottom
+        padding: "5rem 0", // Add padding to the top and bottom
         backgroundColor: "transparent", // Set background to transparent
         display: "flex",
         flexDirection: "column",
