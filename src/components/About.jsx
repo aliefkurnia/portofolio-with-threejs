@@ -11,20 +11,20 @@ import { fadeIn } from "../utils/motion";
 gsap.registerPlugin(ScrollTrigger);
 
 const ServiceCard = ({ index, title, icon }) => (
-  <div className="xs:w-[400px] w-full parallax-effect-glare-scale">
+  <div className="xs:w-[400px] w-full flex justify-center">
     <motion.div
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.3 }}
       viewport={{ once: true, amount: 0.5 }}
-      className="p-[2px] rounded-[20px] relative "
+      className="p-4 rounded-[20px] relative"
       style={{ transformStyle: "preserve-3d" }}
     >
       <div
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[180px] flex justify-evenly items-center "
+        className="bg-tertiary rounded-[20px] py-5 px-8 flex flex-col justify-center items-center min-h-[180px]"
         style={{ background: "rgba(0, 0, 0, 0.75)" }}
       >
-        <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+        <img src={icon} alt={title} className="w-16 h-16 object-contain mb-4" />
         <h3
           className="text-white text-[20px] font-bold text-center"
           style={{ textShadow: "0px 10px 15px rgba(0, 0, 0, 0.4)" }}
@@ -54,7 +54,7 @@ const About = () => {
           stagger: 0.05,
           scrollTrigger: {
             trigger: textRef.current,
-            start: "top 80%",
+            start: "top 50%",
             end: "top 30%",
             scrub: true,
             markers: false,
@@ -65,7 +65,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen mx-auto text-center ">
+    <section className="relative w-full h-screen mx-auto text-center flex flex-col items-center pt-20 ">
       <motion.div variants={fadeIn("", "", 0.1, 1)} className="mx-auto">
         <p className={`${styles.sectionSubText} text-base md:text-xl`}>
           Introduction
