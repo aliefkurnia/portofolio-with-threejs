@@ -66,15 +66,15 @@ function Tech() {
     const splitText = new SplitType(textRef.current, { types: "chars" });
     gsap.fromTo(
       splitText.chars,
-      { color: "transparent" },
+      { color: "#808080" },
       {
         color: "teal",
         duration: 1,
         stagger: 0.05,
         scrollTrigger: {
           trigger: textRef.current,
-          start: "top 80%",
-          end: "top 30%",
+          start: "top 50%",
+          end: "top 40%",
           scrub: true,
           markers: false,
         },

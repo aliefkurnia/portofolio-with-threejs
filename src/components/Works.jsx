@@ -114,7 +114,7 @@ const Works = () => {
 
       gsap.fromTo(
         splitText.chars,
-        { color: "transparent" },
+        { color: "#808080" },
         {
           color: "teal",
           duration: 1,
@@ -132,7 +132,7 @@ const Works = () => {
   }, []);
 
   return (
-    <>
+    <section className="text-center items-center">
       <motion.div variants={textVariant()} className="text-center mt-20">
         <p className={`${styles.sectionSubText}`}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
@@ -152,12 +152,12 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-col gap-7">
+      <div className="mt-10 flex flex-col gap-7 ">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
-    </>
+    </section>
   );
 };
 

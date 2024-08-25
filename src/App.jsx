@@ -42,11 +42,11 @@ const App = () => {
         </div>
         <div className={isMobile ? "about-card" : ""}>
           <About />
+          <Experience />
+          <Tech />
+          <Works />
+          <Contact />
         </div>
-        <Experience />
-        <Tech />
-        <Works />
-        <Contact />
       </div>
       <Footer />
     </BrowserRouter>

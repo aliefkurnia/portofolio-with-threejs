@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { fadeIn } from "../utils/motion";
+import { fadeIn, textVariant } from "../utils/motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +47,7 @@ const About = () => {
       // GSAP animation
       gsap.fromTo(
         splitText.chars,
-        { color: "transparent" },
+        { color: "#808080" },
         {
           color: "teal",
           duration: 1,
@@ -65,8 +65,8 @@ const About = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen mx-auto text-center flex flex-col items-center pt-20 ">
-      <motion.div variants={fadeIn("", "", 0.1, 1)} className="mx-auto">
+    <section className="text-center items-center">
+      <motion.div variants={textVariant()} className="text-center mt-20">
         <p className={`${styles.sectionSubText} text-base md:text-xl`}>
           Introduction
         </p>
