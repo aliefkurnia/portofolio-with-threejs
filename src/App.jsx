@@ -43,15 +43,12 @@ const App = () => {
         <div className={isMobile ? "about-card" : ""}>
           <About />
         </div>
-        <div>
-          <Experience />
-        </div>
+        <Experience />
         <div className="relative z-0">
           <Tech />
         </div>
         <Works />
         <div className="relative z-0">
-          {/* Mengatur style transparan pada section Contact */}
           <Contact />
         </div>
         <Widget />

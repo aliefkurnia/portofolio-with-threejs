@@ -19,6 +19,78 @@
   display: block;
 }
 
+/* In your styles.css or equivalent file */
+
+/* styles.css */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  /* Ensure the scroll effect is smooth */
+}
+
+.relative {
+  width: 100%;
+  /* Ensure the section stretches fully */
+}
+
+section {
+  padding: 0;
+  margin: 0;
+}
+
+.text-center {
+  width: 100%;
+  /* Ensure the text container stretches fully */
+}
+
+.experience-card {
+  flex-shrink: 0;
+  /* Ensure the card does not shrink */
+  min-width: 300px;
+  max-width: 500px;
+  /* Adjust as needed */
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+section {
+  height: 100vh;
+  padding: 0 clamp(4rem, 12vw, 20rem);
+  display: grid;
+  place-content: center;
+}
+
+.reveal-type {
+  font-size: clamp(2rem, 5vw, 8rem);
+  transition: color 0.3s ease;
+}
+
+section:nth-of-type(1) {
+  border-bottom: 1px solid black;
+}
+
+section:nth-of-type(3) {
+  background: #ffff00;
+}
+
+section:nth-of-type(4) {
+  background: rgb(29, 29, 29);
+  color: white;
+}
+
 .black-gradient {
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -233,15 +305,7 @@
   }
 }
 
-.experience-card {
-  perspective: 1000px; /* Define the perspective */
-  transform-style: preserve-3d;
-  transition: transform 0.2s ease-in-out;
-}
-
-.experience-card:hover {
-  transform: rotateX(10deg) rotateY(10deg) translateZ(10px); /* Tilt effect */
-}
+/* Apply fade-in animation to the card */
 @keyframes popupFadeIn {
   0% {
     opacity: 0;
@@ -250,17 +314,6 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes popupFadeOut {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(20px);
   }
 }
 
