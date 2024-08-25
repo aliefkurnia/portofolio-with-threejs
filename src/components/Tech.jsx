@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
 import { useDrag } from "react-use-gesture";
-import { technologies } from "../constants"; // Ensure this path is correct
+import { technologies } from "../constants"; // Pastikan path ini benar
 import { styles } from "../styles";
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Helpers
 const to = (i) => ({
@@ -54,28 +59,28 @@ function Tech() {
     }
   );
 
-  // Define motion variants for swipe animation
-  const swipeAnimationLeft = {
-    animate: {
-      x: [-7, 0], // Move slightly to the left and back
-    },
-    transition: {
-      duration: 0.5,
-      repeat: Infinity, // Repeat the animation
-      repeatType: "reverse", // Reverse the direction after each iteration
-    },
-  };
+  const textRef = useRef(null);
 
-  const swipeAnimationRight = {
-    animate: {
-      x: [7, 0], // Move slightly to the right and back
-    },
-    transition: {
-      duration: 0.5,
-      repeat: Infinity,
-      repeatType: "reverse",
-    },
-  };
+  useEffect(() => {
+    // GSAP animation for the title and description
+    const splitText = new SplitType(textRef.current, { types: "chars" });
+    gsap.fromTo(
+      splitText.chars,
+      { color: "transparent" },
+      {
+        color: "teal",
+        duration: 1,
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 80%",
+          end: "top 30%",
+          scrub: true,
+          markers: false,
+        },
+      }
+    );
+  }, []);
 
   return (
     <section
@@ -92,12 +97,14 @@ function Tech() {
       }}
       className="text-center"
     >
-      <motion.div variants={textVariant()} className="mx-auto">
+      <motion.div ref={textRef} variants={textVariant()} className="mx-auto">
+        <p className={`${styles.sectionSubText}`}>What Tech That I Use</p>
         <h2 className={`${styles.sectionHeadText} text-center`}>Tech Card.</h2>
       </motion.div>
       <motion.p
+        ref={textRef}
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-center"
+        className="mt-4 text-secondary text-[25px] max-w-7xl mx-auto leading-[41px]"
       >
         These are the technologies I've used throughout my journey in web
         development and various projects.
@@ -163,8 +170,27 @@ function Tech() {
           gap: "10px",
         }}
       >
-        <motion.span {...swipeAnimationLeft}>&lt;</motion.span> swipe{" "}
-        <motion.span {...swipeAnimationRight}>&gt;</motion.span>
+        <motion.span
+          animate={{ x: [-7, 0] }} // Move slightly to the left and back
+          transition={{
+            duration: 0.5,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        >
+          &lt;
+        </motion.span>{" "}
+        swipe{" "}
+        <motion.span
+          animate={{ x: [7, 0] }} // Move slightly to the right and back
+          transition={{
+            duration: 0.5,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        >
+          &gt;
+        </motion.span>
       </p>
     </section>
   );

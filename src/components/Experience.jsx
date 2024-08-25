@@ -7,7 +7,7 @@ import { textVariant } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => {
   return (
-    <motion.div className="experience-card p-5 rounded-2xl bg-[#0e1b32] text-white mx-4 flex-shrink-0">
+    <motion.div className="experience-card p-5 rounded-2xl bg-[#000000bf] text-white mx-4 flex-shrink-0">
       <div className="flex items-center mb-4">
         <img
           src={experience.icon}

@@ -11,6 +11,7 @@ import {
   Works,
   StarsCanvas,
   Widget,
+  Footer,
 } from "./components";
 
 const App = () => {
@@ -27,7 +28,6 @@ const App = () => {
 
     // Tambahkan event listener untuk menangani resize
     window.addEventListener("resize", handleResize);
-
     // Bersihkan event listener saat komponen dilepas
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -49,8 +49,8 @@ const App = () => {
         </div>
         <Works />
         <Contact />
-        <Widget />
       </div>
+      <Footer />
     </BrowserRouter>
   );
 };

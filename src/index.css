@@ -19,10 +19,6 @@
   display: block;
 }
 
-/* In your styles.css or equivalent file */
-
-/* styles.css */
-
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -292,39 +288,6 @@ body {
   }
 }
 
-@keyframes widgetSlideIn {
-  0% {
-    transform: translateX(100%);
-  }
-  50% {
-    transform: translateX(50%);
-  }
-  90% {
-    transform: translateX(120%);
-  }
-  97% {
-    transform: translateX(-10%);
-  }
-  99% {
-    transform: translateX(-5%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.popup-show {
-  animation: popupFadeIn 0.7s ease-out forwards;
-}
-
-.popup-hide {
-  animation: popupFadeOut 0.5s ease-out forwards;
-}
-
-.widget-slide-in {
-  animation: widgetSlideIn 5s ease-in-out forwards;
-}
-
 .parallax-effect-glare-scale {
   display: flex;
   flex-direction: column;
@@ -374,4 +337,18 @@ body {
 
 .minimal-textarea {
   resize: none; /* Hilangkan fitur resize */
+}
+.footer-logo {
+  width: 50px; /* Atur ukuran logo sesuai kebutuhan */
+  height: 50px;
+  object-fit: contain; /* Menjaga rasio gambar */
+}
+
+.footer-link {
+  display: flex;
+  align-items: center; /* Rata tengah vertikal */
+}
+
+.footer-link img {
+  margin-right: 15px; /* Jarak antara logo dan teks link */
 }
