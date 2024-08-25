@@ -47,7 +47,7 @@ const Experience = () => {
   ];
 
   return (
-    <section className="text-center items-center mt-20 pt-10 overflow-hidden">
+    <section className="text-center items-center mt-20 pt-10 overflow">
       <motion.div variants={textVariant()} className="text-center mb-10">
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
