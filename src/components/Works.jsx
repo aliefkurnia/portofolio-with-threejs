@@ -1,5 +1,4 @@
-import React from "react";
-import Tilt from "react-parallax-tilt";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -14,20 +13,38 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  website_link,
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <div
         className="bg-tertiary p-5 rounded-2xl w-full flex items-center gap-6"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
       >
-        <div className="w-1/3">
+        <div
+          className="relative w-1/3"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <img
             src={image}
             alt="project_image"
-            className="w-full h-auto object-cover rounded-xl cursor-pointer"
-            onClick={() => window.open(source_code_link, "_blank")}
+            className={`w-full h-auto object-cover rounded-xl  transition-all duration-300 ${
+              isHovered ? "brightness-75" : ""
+            }`}
           />
+          {isHovered && (
+            <div className="absolute inset-0 flex justify-center items-center">
+              <p
+                className="text-white text-lg font-bold cursor-pointer"
+                onClick={() => window.open(website_link, "_blank")}
+              >
+                Jump to website
+              </p>
+            </div>
+          )}
         </div>
 
         <div className="w-2/3">
