@@ -24,7 +24,7 @@ const ServiceCard = ({ index, title, icon }) => (
       <div
         className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col inner-elemen "
         style={{
-          background: "rgba(1, 32, 78, 0.85)",
+          background: "rgba(0, 0, 0, 0.75)",
         }}
       >
         <img src={icon} alt={title} className="w-16 h-16 object-contain" />

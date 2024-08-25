@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
-import { ArcticHazmatRustCanvas } from "./canvas";
-
+import ArcticHazmatRustCanvas from "../components/canvas/ArcticHazmatCanvas"; // Path yang benar
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import cv from "../assets/Muchammad Alief Kurnia Wijaya-resume.pdf";
+
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -15,6 +15,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
   const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
   const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
@@ -73,13 +74,11 @@ const Contact = () => {
   };
 
   return (
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
-    >
+    <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
-        style={{ backgroundColor: "rgba(1, 32, 78, 0.85)" }}
+        className="flex-[0.75] p-8 rounded-2xl"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }} // Background lebih gelap namun tetap transparan
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>

@@ -51,6 +51,7 @@ const App = () => {
         </div>
         <Works />
         <div className="relative z-0">
+          {/* Mengatur style transparan pada section Contact */}
           <Contact />
         </div>
         <Widget />

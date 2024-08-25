@@ -19,7 +19,7 @@ const ProjectCard = ({
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <div
         className="bg-tertiary p-5 rounded-2xl w-full flex items-center gap-6"
-        style={{ backgroundColor: "rgba(1, 32, 78, 0.85)" }}
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
       >
         <div className="w-1/3">
           <img
