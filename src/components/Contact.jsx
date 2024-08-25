@@ -8,7 +8,6 @@ import { ArcticHazmatRustCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import cv from "../assets/Muchammad Alief Kurnia Wijaya-resume.pdf";
-
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -98,7 +97,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="minimal-input"
               required
             />
           </label>
@@ -110,7 +109,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="minimal-input"
               required
             />
           </label>
@@ -123,8 +122,7 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="What you want to say?"
               maxLength={200}
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-              style={{ resize: "none" }}
+              className="minimal-textarea"
               required
             />
           </label>

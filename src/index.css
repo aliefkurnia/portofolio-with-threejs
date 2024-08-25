@@ -322,3 +322,28 @@
 .about-card {
   margin-bottom: 500px;
 }
+.minimal-input,
+.minimal-textarea {
+  background-color: transparent; /* Hilangkan warna latar belakang */
+  border: none; /* Hilangkan border */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7); /* Beri garis bawah */
+  color: white; /* Warna teks */
+  padding: 10px 0; /* Jarak atas dan bawah */
+  font-size: 16px; /* Ukuran font */
+  outline: none; /* Hilangkan outline */
+  transition: border-color 0.3s ease-in-out; /* Animasi saat fokus */
+}
+
+.minimal-input::placeholder,
+.minimal-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Warna placeholder */
+}
+
+.minimal-input:focus,
+.minimal-textarea:focus {
+  border-bottom: 2px solid white; /* Warna garis bawah saat fokus */
+}
+
+.minimal-textarea {
+  resize: none; /* Hilangkan fitur resize */
+}
