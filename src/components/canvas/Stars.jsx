@@ -1,22 +1,51 @@
-import { useState, useRef, Suspense } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 
 const Stars = (props) => {
   const ref = useRef();
+  const [speed, setSpeed] = useState(0.01); // Default slow speed
+  const [direction, setDirection] = useState(1); // 1 for forward, -1 for reverse
   const [sphere] = useState(() => {
     const positions = random.inSphere(new Float32Array(5000), { radius: 1.2 });
-    // Check for NaN values
     if (positions.some((value) => isNaN(value))) {
       console.error("NaN detected in sphere positions:", positions);
     }
     return positions;
   });
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setSpeed(0.05); // Increase speed
+        setDirection(1); // Normal direction
+      } else {
+        // Scrolling up
+        setSpeed(0.05); // Increase speed
+        setDirection(-1); // Reverse direction
+      }
+      lastScrollY = currentScrollY;
+
+      // Reset speed to slow after a short delay
+      setTimeout(() => {
+        setSpeed(0.01); // Slow down after scrolling stops
+      }, 150); // Adjust the delay as needed
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
+    ref.current.rotation.x += delta * speed * direction;
+    ref.current.rotation.y += delta * speed * 1.5 * direction;
   });
 
   return (
