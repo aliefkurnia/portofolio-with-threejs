@@ -180,7 +180,8 @@ const projects = [
       },
     ],
     image: hargaemas,
-    source_code_link: "https://harga-emas.vercel.app/",
+    source_code_link: "https://github.com/aliefkurnia/harga-emas",
+    website_link: "https://harga-emas.vercel.app/",
   },
   {
     name: "Cari Surah",
@@ -201,7 +202,8 @@ const projects = [
       },
     ],
     image: carisurah,
-    source_code_link: "https://cari-surah.vercel.app/",
+    source_code_link: "https://github.com/aliefkurnia/cari-surah",
+    website_link: "https://cari-surah.vercel.app/",
   },
   {
     name: "Cariin",
@@ -222,7 +224,8 @@ const projects = [
       },
     ],
     image: cariin,
-    source_code_link: "https://cariin-film.vercel.app/",
+    source_code_link: "https://github.com/aliefkurnia/Cariin-Film-Finder",
+    website_link: "https://cariin-film.vercel.app/",
   },
 ];
 
