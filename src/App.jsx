@@ -44,9 +44,7 @@ const App = () => {
           <About />
         </div>
         <Experience />
-        <div>
-          <Tech />
-        </div>
+        <Tech />
         <Works />
         <Contact />
       </div>

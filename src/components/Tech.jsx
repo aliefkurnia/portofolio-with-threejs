@@ -86,7 +86,7 @@ function Tech() {
     <section
       style={{
         height: "85vh", // Increase the height of the Tech section
-        padding: "5rem 0", // Add padding to the top and bottom
+        padding: "6rem 0", // Add padding to the top and bottom
         backgroundColor: "transparent", // Set background to transparent
         display: "flex",
         flexDirection: "column",
@@ -104,7 +104,7 @@ function Tech() {
       <motion.p
         ref={textRef}
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[25px] max-w-7xl mx-auto leading-[41px]"
+        className="mt-4 text-secondary text-base sm:text-2xl sm:leading-8 max-w-7xl mx-auto leading-6"
       >
         These are the technologies I've used throughout my journey in web
         development and various projects.

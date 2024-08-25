@@ -48,58 +48,57 @@ const ProjectCard = ({
     <motion.div
       ref={cardRef}
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      className="flex flex-col md:flex-row bg-tertiary p-5 rounded-2xl w-full gap-4"
+      style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
     >
+      {/* Bagian gambar */}
       <div
-        className="bg-tertiary p-5 rounded-2xl w-full flex items-center gap-20"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
+        className="relative w-full md:w-1/3"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        <div
-          className="relative w-1/3"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <img
-            src={image}
-            alt="project_image"
-            className={`w-full h-auto object-cover rounded-xl transition-all duration-300 ${
-              isHovered ? "brightness-75" : ""
-            }`}
-          />
-          {isHovered && (
-            <div className="absolute inset-0 flex justify-center items-center">
-              <p
-                className="text-white text-lg font-bold cursor-pointer"
-                onClick={() => window.open(website_link, "_blank")}
-              >
-                Jump to website
-              </p>
-            </div>
-          )}
+        <img
+          src={image}
+          alt="project_image"
+          className={`w-full h-auto object-cover rounded-xl transition-all duration-300 ${
+            isHovered ? "brightness-75" : ""
+          }`}
+        />
+        {isHovered && (
+          <div className="absolute inset-0 flex justify-center items-center">
+            <p
+              className="text-white text-lg font-bold cursor-pointer"
+              onClick={() => window.open(website_link, "_blank")}
+            >
+              Jump to website
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Bagian deskripsi */}
+      <div className="w-full md:w-2/3">
+        <h3 className="text-white font-bold text-[24px]">{name}</h3>
+        <p className="mt-2 text-secondary text-[14px]">{description}</p>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <p
+              key={`${name}-${tag.name}`}
+              className={`text-[14px] ${tag.color}`}
+            >
+              #{tag.name}
+            </p>
+          ))}
         </div>
 
-        <div className="w-2/3">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
-
-          <div className="mt-4 flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <p
-                key={`${name}-${tag.name}`}
-                className={`text-[14px] ${tag.color}`}
-              >
-                #{tag.name}
-              </p>
-            ))}
-          </div>
-
-          <div className="mt-4">
-            <button
-              className="px-4 py-2 bg-primary text-white rounded-lg"
-              onClick={() => window.open(source_code_link, "_blank")}
-            >
-              View Code
-            </button>
-          </div>
+        <div className="mt-4">
+          <button
+            className="px-4 py-2 bg-primary text-white rounded-lg"
+            onClick={() => window.open(source_code_link, "_blank")}
+          >
+            View Code
+          </button>
         </div>
       </div>
     </motion.div>
@@ -143,8 +142,7 @@ const Works = () => {
         <motion.p
           ref={textRef}
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-secondary text-[25px] max-w-7xl mx-auto leading-[41px]"
-          data-bg-color="#b6b600"
+          className="mt-4 text-secondary text-base sm:text-2xl sm:leading-8 max-w-7xl mx-auto leading-6"
         >
           Following projects showcase my skills and experience through
           real-world examples of my work. Each project is briefly described with

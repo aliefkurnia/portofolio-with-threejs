@@ -65,18 +65,18 @@ const About = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen mx-auto text-center pb-20">
+    <section className="relative w-full h-screen mx-auto text-center ">
       <motion.div variants={fadeIn("", "", 0.1, 1)} className="mx-auto">
-        <p className={`${styles.sectionSubText} text-1xl md:text-2xl`}>
+        <p className={`${styles.sectionSubText} text-base md:text-xl`}>
           Introduction
         </p>
-        <h2 className={`${styles.sectionHeadText} text-6xl md:text-8xl`}>
+        <h2 className={`${styles.sectionHeadText} text-4xl md:text-6xl`}>
           Overview.
         </h2>
       </motion.div>
       <motion.p
         ref={textRef}
-        className="mt-4 text-secondary text-[25px] max-w-7xl mx-auto leading-[41px]"
+        className="mt-4 text-secondary text-base sm:text-2xl sm:leading-8 max-w-7xl mx-auto leading-6"
       >
         I'm committed to developing efficient, scalable, and user-friendly web
         solutions. With nearly two years of experience in web development using
