@@ -7,11 +7,16 @@ const Stars = (props) => {
   const ref = useRef();
   const [speed, setSpeed] = useState(0.01); // Default slow speed
   const [direction, setDirection] = useState(1); // 1 for forward, -1 for reverse
+
+  // Membuat posisi sphere dengan validasi NaN
   const [sphere] = useState(() => {
     const positions = random.inSphere(new Float32Array(5000), { radius: 1.2 });
+
+    // Periksa apakah ada nilai NaN dalam posisi
     if (positions.some((value) => isNaN(value))) {
       console.error("NaN detected in sphere positions:", positions);
     }
+
     return positions;
   });
 
@@ -50,7 +55,8 @@ const Stars = (props) => {
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
+      {/* Gunakan "geometry" dan "args" untuk menghindari masalah posisi NaN */}
+      <Points ref={ref} args={[sphere]} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
           color="#f272c8"
@@ -70,7 +76,6 @@ const StarsCanvas = () => {
         <Suspense fallback={null}>
           <Stars />
         </Suspense>
-
         <Preload all />
       </Canvas>
     </div>
