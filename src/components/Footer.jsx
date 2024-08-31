@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="flex justify-center md:justify-end items-center space-x-2">
             <a className="footer-link">Lets Connect</a>
             <a
-              href="https://www.instagram.com/yourprofile"
+              href="https://www.instagram.com/aliefkurniaa/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"
@@ -30,7 +30,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://www.linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/aliefkurnia"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"
