@@ -127,10 +127,7 @@ const Contact = () => {
           </label>
 
           <div className="flex gap-4 mt-6">
-            <button
-              type="submit"
-              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary transition-transform duration-300 transform hover:scale-105"
-            >
+            <button type="submit" className="btn-primary">
               {loading ? "Sending..." : "Send"}
             </button>
 

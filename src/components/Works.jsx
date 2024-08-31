@@ -81,7 +81,7 @@ const ProjectCard = ({
         <h3 className="text-white font-bold text-[24px]">{name}</h3>
         <p className="mt-2 text-secondary text-[14px]">{description}</p>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2 justify-center">
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
@@ -94,7 +94,7 @@ const ProjectCard = ({
 
         <div className="mt-4">
           <button
-            className="px-4 py-2 bg-primary text-white rounded-lg"
+            className="btn-primary"
             onClick={() => window.open(source_code_link, "_blank")}
           >
             View Code

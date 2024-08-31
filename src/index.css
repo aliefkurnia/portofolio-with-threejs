@@ -264,4 +264,15 @@ body {
     width: 20px; /* Sesuaikan ukuran ikon agar lebih kecil di mobile */
     height: 20px;
   }
+} /* styles.css */
+.btn-primary {
+  background-color: #151030; /* Contoh warna primary */
+  color: white;
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 0.5rem 1rem; /* Padding */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-primary:hover {
+  background-color: #2563eb; /* Warna terang saat hover */
 }
