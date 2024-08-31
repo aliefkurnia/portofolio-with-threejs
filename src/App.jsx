@@ -47,8 +47,10 @@ const App = () => {
           <Works />
           <Contact />
         </div>
+        <Footer />
       </div>
-      <Footer />
+
+      {/* Footer di luar div utama untuk memisah tata letak */}
     </BrowserRouter>
   );
 };
