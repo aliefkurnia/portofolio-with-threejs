@@ -85,9 +85,9 @@ function Tech() {
   return (
     <section
       style={{
-        height: "85vh", // Increase the height of the Tech section
-        padding: "6rem 0", // Add padding to the top and bottom
-        backgroundColor: "transparent", // Set background to transparent
+        height: "85vh",
+        padding: "6rem 2rem", // Padding responsif
+        backgroundColor: "transparent",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -97,7 +97,12 @@ function Tech() {
       }}
       className="text-center"
     >
-      <motion.div ref={textRef} variants={textVariant()} className="mx-auto">
+      <motion.div
+        ref={textRef}
+        variants={textVariant()}
+        className="mx-auto"
+        style={{ maxWidth: "90vw" }}
+      >
         <p className={`${styles.sectionSubText}`}>What Tech That I Use</p>
         <h2 className={`${styles.sectionHeadText} text-center`}>Tech Card.</h2>
       </motion.div>
@@ -111,14 +116,15 @@ function Tech() {
       </motion.p>
       <div
         style={{
-          background: "#FEAE6F",
           cursor:
             "url(https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png) 25 25, auto",
           display: "flex",
           alignItems: "center",
           height: "100%",
+          width: "100%",
           justifyContent: "center",
           position: "relative",
+          paddingTop: "10vw",
         }}
       >
         {props.map(({ x, y, rot, scale }, i) => (
@@ -126,8 +132,10 @@ function Tech() {
             key={i}
             style={{
               position: "absolute",
-              width: "300px",
-              height: "200px",
+              width: "calc(30vw - 1rem)", // Lebar dinamis dengan padding
+              height: "calc(30vh - 1rem)", // Tinggi dinamis dengan padding
+              maxWidth: "350px", // Lebar maksimum
+              maxHeight: "250px", // Tinggi maksimum
               willChange: "transform",
               display: "flex",
               alignItems: "center",
@@ -146,11 +154,8 @@ function Tech() {
                 backgroundSize: "auto 85%",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center center",
-                width: "45vh",
-                maxWidth: "150px",
-                height: "85vh",
-                maxHeight: "285px",
-                willChange: "transform",
+                width: "100%", // Ukuran sesuai kontainer
+                height: "100%", // Ukuran sesuai kontainer
                 borderRadius: "10px",
                 boxShadow:
                   "0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3)",
@@ -161,17 +166,18 @@ function Tech() {
       </div>
       <p
         style={{
-          color: "#666", // Optional: Change text color
-          fontSize: "2rem", // Adjust font size
-          textAlign: "center", // Center the text
+          color: "#666",
+          fontSize: "1.5rem", // Ukuran font responsif
+          textAlign: "center",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           gap: "10px",
+          marginTop: "2rem",
         }}
       >
         <motion.span
-          animate={{ x: [-7, 0] }} // Move slightly to the left and back
+          animate={{ x: [-7, 0] }}
           transition={{
             duration: 0.5,
             repeat: Infinity,
@@ -182,7 +188,7 @@ function Tech() {
         </motion.span>{" "}
         swipe{" "}
         <motion.span
-          animate={{ x: [7, 0] }} // Move slightly to the right and back
+          animate={{ x: [7, 0] }}
           transition={{
             duration: 0.5,
             repeat: Infinity,
