@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { experiences } from "../constants";
@@ -24,7 +24,7 @@ const ExperienceCard = ({ experience }) => {
           </p>
         </div>
       </div>
-      <ul className="list-disc ml-5 space-y-2">
+      <ul className="list-disc ml-5 space-y-2 text-left">
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
@@ -39,25 +39,26 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
-  // Gandakan card untuk membuat efek looping yang mulus
-  const extendedExperiences = [
-    ...experiences,
-    ...experiences,
-    ...experiences, // Gandakan lebih jika diperlukan untuk panjang container
-  ];
+  const [isHovered, setIsHovered] = useState(false);
+
+  const extendedExperiences = [...experiences, ...experiences, ...experiences];
 
   return (
-    <section className="text-center items-center mt-20 pt-10 overflow">
+    <section className="text-center items-center mt-20 pt-10 overflow-hidden">
       <motion.div variants={textVariant()} className="text-center mb-10">
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
       </motion.div>
 
       <div className="relative">
-        <div className="flex overflow-hidden">
+        <div
+          className="flex overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <motion.div
             className="flex"
-            animate={{ x: [0, -2000] }} // Gerakan dari luar layar ke posisi awal
+            animate={isHovered ? { x: 0 } : { x: [0, -2000] }}
             transition={{
               duration: 20,
               ease: "linear",
