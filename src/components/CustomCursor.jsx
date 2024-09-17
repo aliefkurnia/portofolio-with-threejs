@@ -67,9 +67,9 @@ const CustomCursor = () => {
   }, []);
 
   const circleStyle = {
-    height: "20px",
-    width: "20px",
-    borderRadius: "20px",
+    height: "10px",
+    width: "10px",
+    borderRadius: "25px",
     position: "fixed",
     top: "0",
     left: "0",
