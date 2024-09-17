@@ -77,7 +77,7 @@ const Contact = () => {
     <section className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden ">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-1 p-8 rounded-2xl"
+        className="flex-1 p-8 rounded-2xl xl:h-auto md:h-[550px] h-[350px]"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }} // Background lebih gelap namun tetap transparan
       >
         <p className={styles.sectionSubText}>Get in touch</p>
