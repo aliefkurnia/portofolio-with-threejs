@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { experiences } from "../constants";
@@ -39,9 +39,21 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const slideRef = useRef(null);
+  const slideWidth = 300; // Adjust this value based on your card width and spacing
 
-  const extendedExperiences = [...experiences, ...experiences, ...experiences];
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? experiences.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === experiences.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
   return (
     <section className="text-center items-center mt-20 pt-10 overflow-hidden">
@@ -51,28 +63,39 @@ const Experience = () => {
       </motion.div>
 
       <div className="relative">
-        <div
-          className="flex overflow-hidden"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
+        <div className="overflow-hidden w-full">
           <motion.div
             className="flex"
-            animate={isHovered ? { x: 0 } : { x: [0, -2000] }}
-            transition={{
-              duration: 20,
-              ease: "linear",
-              repeat: Infinity,
-            }}
+            ref={slideRef}
+            animate={{ x: -currentIndex * slideWidth }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             style={{ display: "flex" }}
           >
-            {extendedExperiences.map((experience, index) => (
+            {experiences.map((experience, index) => (
               <ExperienceCard
                 key={`experience-${index}`}
                 experience={experience}
               />
             ))}
           </motion.div>
+        </div>
+        <div className="flex justify-between items-center mt-4 px-4">
+          <motion.button
+            onClick={handlePrev}
+            className="bg-gray-800 text-white p-2 rounded-full flex items-center justify-center"
+            whileHover={{ x: -10 }} // Move left
+            whileTap={{ scale: 0.9 }} // Optional: Scale down on click
+          >
+            &lt; Previous
+          </motion.button>
+          <motion.button
+            onClick={handleNext}
+            className="bg-gray-800 text-white p-2 rounded-full flex items-center justify-center"
+            whileHover={{ x: 10 }} // Move right
+            whileTap={{ scale: 0.9 }} // Optional: Scale down on click
+          >
+            Next &gt;
+          </motion.button>
         </div>
       </div>
     </section>
