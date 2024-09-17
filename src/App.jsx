@@ -44,7 +44,8 @@ const App = () => {
           <Contact />
         </div>
         <Footer />
-        <CustomCursor />
+        {!isMobile && <CustomCursor />}{" "}
+        {/* Render CustomCursor only on non-mobile devices */}
       </div>
     </BrowserRouter>
   );
