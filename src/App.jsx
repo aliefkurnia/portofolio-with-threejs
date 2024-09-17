@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
-
 import {
   About,
   Contact,
@@ -12,23 +11,20 @@ import {
   StarsCanvas,
   Widget,
   Footer,
+  CustomCursor,
 } from "./components";
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Fungsi untuk mengecek ukuran layar
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Ukuran mobile dianggap jika <= 768px
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    // Jalankan fungsi saat komponen pertama kali dirender
     handleResize();
 
-    // Tambahkan event listener untuk menangani resize
     window.addEventListener("resize", handleResize);
-    // Bersihkan event listener saat komponen dilepas
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -48,9 +44,8 @@ const App = () => {
           <Contact />
         </div>
         <Footer />
+        <CustomCursor />
       </div>
-
-      {/* Footer di luar div utama untuk memisah tata letak */}
     </BrowserRouter>
   );
 };

@@ -9,6 +9,7 @@ import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import Widget from "./Widget";
 import Footer from "./Footer";
+import CustomCursor from "./CustomCursor";
 
 export {
   Hero,
@@ -23,4 +24,5 @@ export {
   StarsCanvas,
   Widget,
   Footer,
+  CustomCursor,
 };
