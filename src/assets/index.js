@@ -30,6 +30,8 @@ import realta from "./company/realta.png";
 import hargaemas from "./hargaemas.png";
 import carisurah from "./carisurah.png";
 import cariin from "./cariin.png";
+import bookingin from "./bookingin.png";
+import bookshelf from "./bookshelf.png";
 
 export {
   github,
@@ -58,6 +60,8 @@ export {
   hargaemas,
   carisurah,
   cariin,
+  bookingin,
+  bookshelf,
   astrowidget,
   instagram,
   linkedin,

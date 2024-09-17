@@ -21,6 +21,8 @@ import {
   hargaemas,
   carisurah,
   cariin,
+  bookingin,
+  bookshelf,
 } from "../assets";
 
 export const navLinks = [
@@ -226,6 +228,60 @@ const projects = [
     image: cariin,
     source_code_link: "https://github.com/aliefkurnia/Cariin-Film-Finder",
     website_link: "https://cariin-film.vercel.app/",
+  },
+  {
+    name: "Bookingin",
+    description:
+      "A web application for searching hotels, providing detailed descriptions and ratings for each property.",
+    tags: [
+      {
+        name: "javascript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "dom",
+        color: "green-text-gradient",
+      },
+      {
+        name: "html",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: bookingin,
+    source_code_link:
+      "https://github.com/aliefkurnia/submission-tugas-akhir-membuat-website",
+    website_link: "https://bookingin.vercel.app/",
+  },
+  {
+    name: "Bookshelf App",
+    description:
+      "A web application for searching hotels, providing detailed descriptions and ratings for each property.",
+    tags: [
+      {
+        name: "javascript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "local storage",
+        color: "green-text-gradient",
+      },
+      {
+        name: "html",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: bookshelf,
+    source_code_link:
+      "https://github.com/aliefkurnia/submission-membangun-bookshelf-app",
+    website_link: "https://bookshelfalief.vercel.app/",
   },
 ];
 
