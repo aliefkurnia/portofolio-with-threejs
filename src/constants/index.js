@@ -259,7 +259,7 @@ const projects = [
   {
     name: "Bookshelf App",
     description:
-      "A web application for searching hotels, providing detailed descriptions and ratings for each property.",
+      "A web application for managing your book collection, with features for adding, editing, searching, and categorizing books. Supports local storage for data persistence.",
     tags: [
       {
         name: "javascript",

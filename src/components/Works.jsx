@@ -48,19 +48,20 @@ const ProjectCard = ({
     <motion.div
       ref={cardRef}
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-      className="flex flex-col md:flex-row bg-tertiary p-5 rounded-2xl w-full gap-4"
+      className="flex flex-col bg-tertiary p-3 rounded-2xl w-full gap-4" // Mengurangi padding
       style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
     >
       {/* Bagian gambar */}
       <div
-        className="relative w-full md:w-1/3"
+        className="relative w-full"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <img
           src={image}
           alt="project_image"
-          className={`w-full h-auto object-cover rounded-xl transition-all duration-300 ${
+          className={`w-full h-100 object-cover rounded-xl transition-all duration-300 ${
+            // Kurangi tinggi gambar
             isHovered ? "brightness-75" : ""
           }`}
         />
@@ -77,21 +78,21 @@ const ProjectCard = ({
       </div>
 
       {/* Bagian deskripsi */}
-      <div className="w-full md:w-2/3">
-        <h3 className="text-white font-bold text-[24px]">{name}</h3>
-        <p className="mt-2 text-secondary text-[14px]">{description}</p>
-
+      <div className="w-full">
+        <h3 className="text-white font-bold text-[25px]">{name}</h3>{" "}
+        {/* Ukuran teks dikurangi */}
+        <p className="mt-2 text-secondary text-[15px]">{description}</p>{" "}
+        {/* Ukuran teks dikurangi */}
         <div className="mt-4 flex flex-wrap gap-2 justify-center">
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className={`text-[12px] ${tag.color}`} // Ukuran teks dikurangi
             >
               #{tag.name}
             </p>
           ))}
         </div>
-
         <div className="mt-4">
           <button
             className="btn-primary"
@@ -156,7 +157,8 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-10 flex flex-col gap-7 ">
+      {/* Ubah layout menjadi grid */}
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-7">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
